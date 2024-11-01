@@ -432,10 +432,12 @@ IBM 650
 ### Tidydata
 
 ![](0_Figures/1_Tidydata1.png)
+*Tomado de Allison Horst (2023)*
 
 ### Tidydata
 
 ![](0_Figures/1_Tidydata2.png)
+*Tomado de Allison Horst (2023)*
 
 ### Tidydata
 
@@ -493,6 +495,9 @@ df %>%
 
 
 # Análisis Exploratorio de Datos (EDA)
+
+[<img src="0_Figures/0_PalmerPenguins.png" alt="Pingüinos Palmer" width="65%">](https://allisonhorst.github.io/palmerpenguins/ "Dataset de Pingüinos Palmer")
+
 
 ## Medidas de tendencia central
 
@@ -815,92 +820,6 @@ Datos: 11 , 13 , 16 , 20 , 21
 $P_{10} = ?$ \hspace{3cm} $P_{95} = ?$ \hspace{3cm} $P_{73} = ?$\
 $P_{20} = ?$ \hspace{3cm} $P_{50} = ?$
 
-## Tablas de frecuencias
 
-```{r}
-titulos <- c("Intervalo", "Mc", "fi", "Fi", "hi", "Hi")
-X1 <- c("[0.5-1.3)","[1.3-2.1)","[2.1-2.9)","[2.9-3.7)","[3.7-4.5]")
-X2 <- c(0.9,1.7,2.5,3.3,4.1)
-X3 <- c(4,6,4,7,4)
-X4 <- c(4,10,14,21,25)
-X5 <- c(0.16,0.24,0.16,0.28,0.16)
-X6 <- c(0.16,0.4,0.56,0.84,1)
 
-df <- as_tibble(cbind(X1,X2,X3,X4,X5,X6))
-colnames(df) <- titulos
-
-df %>% 
-  kbl(align = "c") %>% 
-  kable_material(c("striped", "hover")) %>% 
-  row_spec(1:nrow(df), extra_css = "text-align: center; vertical-align: middle;")
-```
-
-## Tablas de frecuencias
-
-::: small-text
-**Notas**: {1.2, 1, 0.6, 0.5, 1.3, 2, 2, 1.8, 1.9, 1.4, 2.5, 2.4, 2.3,
-2.8, 3, 3.1, 3, 3.5, 2.9, 3.4, 3.6, 4.5, 3.7, 3.8, 3.9}
-
-```{r}
-titulos <- c("Intervalo", "Mc", "fi", "Fi", "hi", "Hi")
-X1 <- c("","","","","")
-X2 <- c("","","","","")
-X3 <- c("","","","","")
-X4 <- c("","","","","")
-X5 <- c("","","","","")
-X6 <- c("","","","","")
-
-df <- as_tibble(cbind(X1,X2,X3,X4,X5,X6))
-colnames(df) <- titulos
-
-df %>% 
-  kbl(align = "c") %>% 
-  kable_material(c("striped", "hover")) %>% 
-  row_spec(1:nrow(df), extra_css = "text-align: center; vertical-align: middle;")
-```
-
-::: columns
-::: {.column width="50%"}
-$MC = \text{Marca de clase}$
-
-$fi = \text{Frecuencia absoluta}$
-
-$Fi = \text{Frecuencia absoluta acumulada}$
-:::
-
-::: {.column width="50%"}
-$hi = \text{Frecuencia relativa}$
-
-$Hi = \text{Frecuencia relativa acumulada}$
-:::
-:::
-:::
-
-## Cálculos sobre datos agrupados
-
-::: small-text
-::: columns
-::: {.column width="50%"}
-**Media aritmética** $$\begin{equation}
-\bar{X} = \sum_{i=1}^m \frac{f_i * M_c}{n}
-\end{equation}$$
-
-$\text{m = número de clases}$
-
-**Mediana** $$\begin{equation}
-\text{Me} = Linf_{i} * \frac{\frac{n}{2} - F_{i-1}}{f_{i}}*a
-\end{equation}$$
-
-$\text{a= ancho de clase}$
-$\text{i = # de intervalo cuya frecuencia acumulada supera } \frac{n}{2}$
-$Linf_{i} = \text{Límite inferior del intervalo i}$
-:::
-
-::: {.column width="50%"}
-**Varianza** $$\begin{equation}
-V(X) = \sum_{i=1}^m \frac{(Mc_{i} - \bar{X})^2*f_{i}}{n-1}
-\end{equation}$$
-:::
-:::
-:::
 
